@@ -45,8 +45,8 @@ h1 {
   background-color: #fff;
   width: 50%;
   display: grid;
-  grid-template-columns: repeat(9, 30px);
-  grid-template-rows: repeat(9, 30px);
+  grid-template-columns: repeat(var(--elements), 30px);
+  grid-template-rows: repeat(var(--elements), 30px);
   gap: 10px;
   justify-content: center;
   padding: 40px;

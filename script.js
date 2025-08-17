@@ -14,10 +14,11 @@ const winnerPanel = document.querySelector(".winner-panel")
 const winnerStatusElement = document.querySelector("#winner-status-message")
 const restartBtn = document.querySelector("#restart-btn")
 const gridSize = 5
+const elements = gridSize * 2 - 1
 
 // Create the board (dots, lines, and boxes)
 const createBoard = () => {
-  const elements = gridSize * 2 - 1
+  board.style.setProperty("--elements", elements);
   board.innerHTML = ""
   for (let row = 0; row < elements; row++) {
     for (let col = 0; col < elements; col++) {
@@ -87,10 +88,10 @@ const checkForBoxCompletion = () => {
       box.previousElementSibling, // Left
       box.nextElementSibling, // Right (
       box.parentElement.children[
-        Array.from(box.parentElement.children).indexOf(box) - 9
+        Array.from(box.parentElement.children).indexOf(box) - elements
       ], // Top
       box.parentElement.children[
-        Array.from(box.parentElement.children).indexOf(box) + 9
+        Array.from(box.parentElement.children).indexOf(box) + elements
       ], // Bottom
     ]
 
